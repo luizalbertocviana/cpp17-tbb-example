@@ -1,0 +1,5 @@
+CPMAddPackage(
+  NAME FindTBB
+  GITHUB_REPOSITORY wjakob/tbb
+  GIT_TAG tbb44u4
+)

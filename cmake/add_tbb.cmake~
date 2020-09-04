@@ -1,0 +1,5 @@
+CPMAddPackage(
+  NAME TBB
+  GITHUB_REPOSITORY wjakob/tbb
+  VERSION tbb44u4
+)
