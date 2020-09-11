@@ -40,13 +40,17 @@ int main(int argc, char **argv) {
     start = clk::now();
     std::sort(std::execution::par_unseq, input_parallel.begin(), input_parallel.end());
     end = clk::now();
-    std::cout << "parallel " << std::chrono::duration<float>(end - start).count() << " s" << std::endl;
+    auto parallel_duration {std::chrono::duration<float>(end - start).count()};
+    std::cout << "parallel " << parallel_duration << " s" << std::endl;
 
     // Sort and time serial.
     start = clk::now();
     std::sort(std::execution::seq, input_serial.begin(), input_serial.end());
     end = clk::now();
-    std::cout << "serial " << std::chrono::duration<float>(end - start).count() << " s" << std::endl;
+    auto serial_duration {std::chrono::duration<float>(end - start).count()};
+    std::cout << "serial " << serial_duration << " s" << std::endl;
+
+    std::cout << "speedup: " << serial_duration / parallel_duration << '\n';
 
     assert(input_parallel == input_serial);
 }
