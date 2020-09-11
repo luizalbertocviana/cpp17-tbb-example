@@ -1,1 +1,4 @@
 /README.org~
+/compile_commands.json
+/build/
+/.ccls-cache/
